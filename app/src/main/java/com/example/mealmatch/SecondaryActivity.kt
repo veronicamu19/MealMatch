@@ -1,16 +1,37 @@
 package com.example.mealmatch
 
+import android.arch.lifecycle.ViewModelProviders
+import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity;
+import com.example.mealmatch.databinding.ActivityMainBinding
+import com.example.mealmatch.databinding.ActivitySecondaryBinding
 
 import kotlinx.android.synthetic.main.activity_secondary.*
+import android.widget.ArrayAdapter
+
+
 
 class SecondaryActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_secondary)
+    private lateinit var binding: ActivitySecondaryBinding
+    private val viewModel: SecondaryViewModel by lazy {
+        ViewModelProviders.of(this,
+            SecondaryViewModelFactory(intent.extras!!.get("PERSON") as Person))
+            .get(SecondaryViewModel::class.java)
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_secondary)
+        setLocationAdapter()
+    }
+
+    private fun setLocationAdapter(){
+        val locationStrings: ArrayList<String> = enumValues<Locations>().map{it.getTitle()} as ArrayList<String>
+        val locationAdapter: ArrayAdapter<String> = ArrayAdapter<String>(
+            this, android.R.layout.simple_list_item_1,locationStrings)
+        binding.diningLocation.setAdapter(locationAdapter)
+    }
 }
