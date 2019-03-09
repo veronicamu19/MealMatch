@@ -1,4 +1,6 @@
 package com.example.mealmatch
 
-class SecondaryViewModel {
+import android.arch.lifecycle.ViewModel
+
+class SecondaryViewModel(val person: Person): ViewModel() {
 }
