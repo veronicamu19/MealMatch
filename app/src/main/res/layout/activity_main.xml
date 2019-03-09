@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:textSize="45dp"
+            android:textColor="@color/buttonColor"
+            android:translationY="-160dp"
+            android:text="MEAL MATCH"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:textSize="15dp"
+            android:textColor="@color/buttonColor"
+            android:translationY="90dp"
+            android:text="CHOOSE YOUR NEXT STEP:"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+            android:id="@+id/swipeMeIn"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:text="SWIPE ME IN"
+            android:textSize="15dp"
+            android:textColor="@color/colorAccent"
+            android:translationY="140dp"
+            android:background="@drawable/red_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+            android:id="@+id/swipeSomeoneIn"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:text="SWIPE SOMEONE IN"
+            android:textSize="15dp"
+            android:textColor="@color/colorAccent"
+            android:translationY="215dp"
+            android:background="@drawable/red_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+            android:src="@drawable/mealmatchlogo"
+            android:layout_width="190dp"
+            android:layout_height="190dp"
+            android:translationY="210dp"
+            android:translationX="115dp" />
+
+</android.support.constraint.ConstraintLayout>

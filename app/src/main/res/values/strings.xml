@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">MealMatch</string>
+    <string-array name="DINING_LOCATION">
+        <item>SBARRO</item>
+        <item>LDH</item>
+        <item>KILMER\'S MARKET</item>
+        <item>HENRY\'S DINER</item>
+        <item>ROCK CAFE</item>
+        <item>THE RUTGERS CLUB</item>
+        <item>WOODY\'S</item>
+        <item>BDH</item>
+        <item>BROWER COMMONS</item>
+        <item>COOK CAFE</item>
+        <item>DOUGLASS CAFE</item>
+        <item>HARVEST IFNH</item>
+        <item>NEILSON DH</item>
+        <item>RED PINE PIZZA</item>
+        <item>STARBUCKS TRUCK</item>
+        <item>KNIGHT WAGON</item>
+    </string-array>
+    <string-array name="TIME">
+        <item>7:00am</item>
+        <item>7:15am</item>
+        <item>7:30am</item>
+        <item>7:45am</item>
+        <item>8:00am</item>
+        <item>8:15am</item>
+        <item>8:30am</item>
+        <item>8:45am</item>
+        <item>9:00am</item>
+        <item>9:15am</item>
+        <item>9:30am</item>
+        <item>9:45am</item>
+        <item>10:00am</item>
+        <item>10:15am</item>
+        <item>10:30am</item>
+        <item>10:45am</item>
+        <item>11:00am</item>
+        <item>11:15am</item>
+        <item>11:30am</item>
+        <item>11:45am</item>
+        <item>12:00pm</item>
+        <item>12:15pm</item>
+        <item>12:30pm</item>
+        <item>12:45pm</item>
+        <item>1:00pm</item>
+        <item>1:15pm</item>
+        <item>1:30pm</item>
+        <item>1:45pm</item>
+        <item>2:00pm</item>
+        <item>2:15pm</item>
+        <item>2:30pm</item>
+        <item>2:45pm</item>
+        <item>3:00pm</item>
+        <item>3:15pm</item>
+        <item>3:30pm</item>
+        <item>3:45pm</item>
+        <item>4:00pm</item>
+        <item>4:15pm</item>
+        <item>4:30pm</item>
+        <item>4:45pm</item>
+        <item>5:00pm</item>
+        <item>5:15pm</item>
+        <item>5:30pm</item>
+        <item>5:45pm</item>
+        <item>6:00pm</item>
+        <item>6:15pm</item>
+        <item>6:30pm</item>
+        <item>6:45pm</item>
+        <item>7:00pm</item>
+        <item>7:15pm</item>
+        <item>7:30pm</item>
+        <item>7:45pm</item>
+        <item>8:00pm</item>
+        <item>8:15pm</item>
+        <item>8:30pm</item>
+        <item>8:45pm</item>
+        <item>9:00pm</item>
+        <item>9:15pm</item>
+        <item>9:30pm</item>
+        <item>9:45pm</item>
+        <item>10:00pm</item>
+        <item>10:15pm</item>
+        <item>10:30pm</item>
+        <item>10:45pm</item>
+        <item>11:00pm</item>
+        <item>11:15pm</item>
+        <item>11:30pm</item>
+        <item>11:45pm</item>
+        <item>12:00pm</item>
+    </string-array>
+</resources>
