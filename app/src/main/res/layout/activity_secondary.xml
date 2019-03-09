@@ -10,7 +10,9 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        >
 
         <AutoCompleteTextView
                 android:id="@+id/diningLocation"
@@ -40,7 +42,7 @@
             android:layout_height="70dp"
             android:text="MEAL MATCH ME!"
             android:textSize="17dp"
-            android:background="@drawable/red_button"
+            android:background="@drawable/white_button"
             android:textColor="@color/colorButtonText"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
