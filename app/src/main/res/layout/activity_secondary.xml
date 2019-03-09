@@ -13,13 +13,10 @@
         android:layout_height="match_parent">
 
 
-        <Spinner
+        <EditText
             android:id="@+id/diningLocation"
-            android:layout_width="350dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
-            android:autofillHints="DINING LOCATION"
             app:layout_constraintBottom_toTopOf="@id/time"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -30,6 +27,7 @@
             android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:timePickerMode="spinner"
             app:layout_constraintTop_toBottomOf="@id/diningLocation"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

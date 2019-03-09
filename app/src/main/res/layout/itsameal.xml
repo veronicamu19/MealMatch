@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="vm" type="com.example.mealmatch.ItsaMealViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/itsa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="45dp"
+            android:textColor="@color/colorPrimary"
+            android:text="IT'S A"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/image"
+            android:layout_marginTop="50dp"
+            />
+
+
+        <ImageView
+            android:id="@+id/image"
+            android:src="@drawable/mealmatchlogo"
+            app:layout_constraintTop_toBottomOf="@id/itsa"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/name"
+            android:layout_width="190dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/meal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="45dp"
+            android:textColor="@color/colorPrimary"
+            android:text="MEAL!"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="250dp"
+            />
+
+        <TextView
+            android:id="@+id/contactat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/colorPrimary"
+            android:text="YOU CAN CONTACT NAME AT:"
+            app:layout_constraintTop_toBottomOf="@id/meal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="150dp"
+
+            />
+
+        <TextView
+            android:id="@+id/emailconfirmation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textColor="@color/colorPrimary"
+            android:text="SOMEONE@GMAIL.COM"
+            app:layout_constraintTop_toBottomOf="@id/contactat"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/ok"
+            android:layout_marginBottom="100dp"
+            android:layout_marginTop="20dp"
+            />
+
+        <Button
+            style="@style/ButtonStyle"
+            android:id="@+id/ok"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:text="OK"
+            android:textSize="15dp"
+            android:textColor="@color/colorButtonText"
+            app:layout_constraintTop_toBottomOf="@id/emailconfirmation"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="50dp"
+            />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
