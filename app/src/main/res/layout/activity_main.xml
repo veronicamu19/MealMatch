@@ -21,7 +21,6 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/image"
-
             />
 
 
@@ -33,7 +32,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/name"
                 android:layout_width="190dp"
-                android:layout_height="190dp"
+                android:layout_height="110dp"
             />
         <EditText
             android:id="@+id/name"
@@ -47,7 +46,6 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/image"
-            android:layout_marginTop="20dp"
             />
 
         <EditText
@@ -62,7 +60,6 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/name"
-            android:layout_marginTop="50dp"
             />
 
         <Button
@@ -72,7 +69,7 @@
                 android:layout_height="50dp"
                 android:text="SWIPE ME IN"
                 android:textSize="15dp"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/colorButtonText"
                 app:layout_constraintTop_toBottomOf="@id/phoneemail"
                 app:layout_constraintRight_toLeftOf="@id/swipeSomeoneIn"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -87,7 +84,7 @@
                 android:layout_height="50dp"
                 android:text="SWIPE SOMEONE IN"
                 android:textSize="15dp"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/colorButtonText"
                 app:layout_constraintTop_toBottomOf="@id/phoneemail"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/swipeMeIn"
