@@ -8,11 +8,24 @@
     </data>
 
     <android.support.v7.widget.LinearLayoutCompat
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".MatchScreenActivity">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Matches"
+                android:padding="@dimen/fab_margin"
+                android:textSize="40sp" android:fontFamily="sans-serif-thin"/>
+        <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv"
+                android:scrollbars="vertical"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-
+        </android.support.v7.widget.RecyclerView>
     </android.support.v7.widget.LinearLayoutCompat>
 
 </layout>
