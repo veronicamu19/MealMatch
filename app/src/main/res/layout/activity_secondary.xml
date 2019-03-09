@@ -25,31 +25,14 @@
             app:layout_constraintTop_toTopOf="parent"
             />
 
-        <Spinner
+        <EditText
             android:id="@+id/time"
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
             app:layout_constraintTop_toBottomOf="@id/diningLocation"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/plain_text_input"/>
-
-
-        <EditText
-            android:id="@+id/plain_text_input"
-            android:layout_width="350dp"
-            android:layout_height="45dp"
-            android:textSize="20dp"
-            android:textColor="@color/colorAccent"
-            android:text="NAME"
-            app:layout_constraintBottom_toTopOf="@id/mealMatchMe"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/time"/>
-
+            app:layout_constraintBottom_toTopOf="@id/mealMatchMe"/>
 
         <Button
             android:id="@+id/mealMatchMe"
@@ -62,7 +45,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/plain_text_input"/>
+            app:layout_constraintTop_toBottomOf="@id/time"/>
 
     </android.support.constraint.ConstraintLayout>
 

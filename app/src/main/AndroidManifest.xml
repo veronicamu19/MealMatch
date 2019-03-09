@@ -11,15 +11,15 @@
             android:theme="@style/AppTheme">
         <activity
                 android:name=".SecondaryActivity"
-                android:label="@string/title_activity_add_detail"
+                android:label="SecondaryActivity"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-                android:name=".MainActivity"
-                android:label="@string/title_activity_welcome"
+                android:name=".MatchScreenActivity"
+                android:label="MatchScreenActivity"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".MatchScreenActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
