@@ -89,4 +89,6 @@
         <item>11:45pm</item>
         <item>12:00pm</item>
     </string-array>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="title_activity_add_detail">AddDetailActivity</string>
 </resources>
