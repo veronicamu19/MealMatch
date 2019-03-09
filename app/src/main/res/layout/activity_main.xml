@@ -13,14 +13,16 @@
         <TextView
                 android:id="@id/title"
                 android:layout_width="wrap_content"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:textSize="45dp"
                 android:textColor="@color/colorPrimary"
                 android:text="MEAL MATCH"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/image" />
+                app:layout_constraintBottom_toTopOf="@id/image"
+
+            />
 
 
         <ImageView
@@ -29,42 +31,10 @@
                 app:layout_constraintTop_toBottomOf="@id/title"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/swipeMeIn"
+                app:layout_constraintBottom_toTopOf="@id/name"
                 android:layout_width="190dp"
-                android:layout_height="190dp" />
-
-        <Button
-                android:id="@+id/swipeMeIn"
-                android:layout_width="170dp"
-                android:layout_height="50dp"
-                android:text="SWIPE ME IN"
-                android:textSize="15dp"
-                android:textColor="@color/colorAccent"
-                android:background="@drawable/red_button"
-                app:layout_constraintTop_toBottomOf="@id/phoneemail"
-                app:layout_constraintRight_toLeftOf="@id/swipeSomeoneIn"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginTop="20dp"
-                android:onClick="nextActivity"
-                />
-
-        <Button
-                android:id="@+id/swipeSomeoneIn"
-                android:layout_width="170dp"
-                android:layout_height="50dp"
-                android:text="SWIPE SOMEONE IN"
-                android:textSize="15dp"
-                android:textColor="@color/colorAccent"
-                android:background="@drawable/red_button"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="@id/swipeMeIn"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/phoneemail"
-                android:layout_marginTop="20dp"
-                android:onClick="nextActivity"
-                />
-
+                android:layout_height="190dp"
+            />
         <EditText
             android:id="@+id/name"
             android:layout_width="350dp"
@@ -92,9 +62,38 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/name"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             />
 
+        <Button
+                style="@style/ButtonStyle"
+                android:id="@+id/swipeMeIn"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:text="SWIPE ME IN"
+                android:textSize="15dp"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintTop_toBottomOf="@id/phoneemail"
+                app:layout_constraintRight_toLeftOf="@id/swipeSomeoneIn"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:onClick="nextActivity"
+                />
+
+        <Button
+                style="@style/ButtonStyle"
+                android:id="@+id/swipeSomeoneIn"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:text="SWIPE SOMEONE IN"
+                android:textSize="15dp"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintTop_toBottomOf="@id/phoneemail"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/swipeMeIn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:onClick="nextActivity"
+                />
 
     </android.support.constraint.ConstraintLayout>
 </layout>
