@@ -75,7 +75,7 @@
         <EditText
                 android:id="@+id/name"
                 android:layout_width="300dp"
-                android:layout_height="41dp"
+                android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textColor="@color/colorText"
                 android:textColorHighlight="@color/colorPrimary"
@@ -94,7 +94,7 @@
         <EditText
                 android:id="@+id/phoneemail"
                 android:layout_width="300dp"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:textColor="@color/colorText"
                 android:hint="phone/email"
