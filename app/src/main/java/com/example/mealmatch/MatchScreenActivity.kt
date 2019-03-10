@@ -1,9 +1,17 @@
 package com.example.mealmatch
 
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Context
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Layout
+import android.view.Gravity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.PopupWindow
 import com.example.mealmatch.databinding.ActivityMatchscreenBinding
 import kotlinx.coroutines.*
 
@@ -25,6 +33,34 @@ class MatchScreenActivity : AppCompatActivity() {
     }
 
     private fun setAdapter(matches: ArrayList<Person>){
-        binding.rv.adapter = MyAdapter(matches, this)
+        val mAdapter: MyAdapter = MyAdapter(matches,this)
+        binding.rv.adapter = mAdapter
+        mAdapter.onItemClick = { name, contact ->
+            showPopUp()
+        }
+    }
+
+    private fun showPopUp() {
+        val inflater = getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val popupView: View = inflater.inflate(R.layout.itsameal, null)
+
+        val width: Int = LinearLayout.LayoutParams.WRAP_CONTENT
+        val height: Int = LinearLayout.LayoutParams.WRAP_CONTENT;
+        val focusable: Boolean = true; // lets taps outside the popup also dismiss it
+        val popupWindow: PopupWindow = PopupWindow(popupView, width, height, focusable);
+
+        // show the popup window
+        // which view you pass in doesn't matter, it is only used for the window tolken
+        popupWindow.showAtLocation(binding.rv, Gravity.CENTER, 0, 0);
+
+        /* dismiss the popup window when touched
+        popupView.setOnTouchListener(View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                popupWindow.dismiss();
+                return true;
+            }
+        });*/
+
     }
 }

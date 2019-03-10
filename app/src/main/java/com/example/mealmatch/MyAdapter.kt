@@ -5,9 +5,12 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import kotlinx.android.synthetic.main.item_match.view.*
 
-class MyAdapter(val items : ArrayList<Person>, val context: Context) : RecyclerView.Adapter<ViewHolder>() {
+class MyAdapter(val items : ArrayList<Person>, val context: Context) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+
+    var onItemClick: ((String, String) -> Unit)? = null
 
     override fun getItemCount(): Int {
         return items.size
@@ -21,10 +24,21 @@ class MyAdapter(val items : ArrayList<Person>, val context: Context) : RecyclerV
     // Binds each animal in the ArrayList to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name.text = items.get(position).name
+        holder.location.text = items.get(position).location!!.getTitle()
+        holder.time.text = items.get(position).time.toString()
     }
-}
 
-class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
-    // Holds the TextView that will add each animal to
-    val name = view.matchname
+    inner class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
+        // Holds the TextView that will add each animal to
+        val name = view.matchname
+        val location = view.matchlocation
+        val time = view.matchtime
+
+        init {
+            view.setOnClickListener {
+                onItemClick?.invoke(items[adapterPosition].name, items[adapterPosition].emailOrPhone)
+            }
+        }
+    }
+
 }

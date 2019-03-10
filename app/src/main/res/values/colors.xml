@@ -4,4 +4,6 @@
     <color name="backgroundColor">#FF6969</color>
     <color name="colorAccent">#000000</color>
     <color name="colorText">#FFFFFF</color>
+    <color name="matchbackground">#D8000000</color>
+    <color name="matchButtonBackground">#00000000</color>
 </resources>
