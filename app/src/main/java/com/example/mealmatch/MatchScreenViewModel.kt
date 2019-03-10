@@ -29,6 +29,9 @@ class MatchScreenViewModel(val person:Person): ViewModel() {
         }
         sortedMatches=sortedMatches.filter {it.location==person.location}
         sortedMatches=sortedMatches.filter { abs(it.time!!-person.time!!)<30 }
+        //
+        sortedMatches=sortedMatches.sortedByDescending {abs(it.time!!-person.time!!)}.reversed()
+        //
         if(sortedMatches.isEmpty()){
             return null
         }
