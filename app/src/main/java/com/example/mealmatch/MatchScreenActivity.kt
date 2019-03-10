@@ -10,8 +10,7 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import android.widget.PopupWindow
+import android.widget.*
 import com.example.mealmatch.databinding.ActivityMatchscreenBinding
 import kotlinx.coroutines.*
 
@@ -36,22 +35,33 @@ class MatchScreenActivity : AppCompatActivity() {
         val mAdapter: MyAdapter = MyAdapter(matches,this)
         binding.rv.adapter = mAdapter
         mAdapter.onItemClick = { name, contact ->
-            showPopUp()
+            showPopUp(name, contact)
         }
     }
 
-    private fun showPopUp() {
+    private fun showPopUp(name:String, contact:String) {
         val inflater = getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val popupView: View = inflater.inflate(R.layout.itsameal, null)
 
-        val width: Int = LinearLayout.LayoutParams.WRAP_CONTENT
-        val height: Int = LinearLayout.LayoutParams.WRAP_CONTENT;
+
+        val width: Int = LinearLayout.LayoutParams.MATCH_PARENT
+        val height: Int = LinearLayout.LayoutParams.MATCH_PARENT
         val focusable: Boolean = true; // lets taps outside the popup also dismiss it
         val popupWindow: PopupWindow = PopupWindow(popupView, width, height, focusable);
 
         // show the popup window
         // which view you pass in doesn't matter, it is only used for the window tolken
         popupWindow.showAtLocation(binding.rv, Gravity.CENTER, 0, 0);
+
+        val okbtn: Button = popupView.findViewById(R.id.ok)
+        val nametv: TextView = popupView.findViewById(R.id.name_tv)
+        val contacttv: TextView = popupView.findViewById(R.id.contact_tv)
+
+        nametv.text = "You can contact " + name + " at:"
+        contacttv.text = contact
+        okbtn.setOnClickListener {
+            popupWindow.dismiss()
+        }
 
         /* dismiss the popup window when touched
         popupView.setOnTouchListener(View.OnTouchListener() {
