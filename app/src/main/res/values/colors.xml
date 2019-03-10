@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#DC143C</color>
-    <color name="backgroundColor">#FD5F49</color>
+    <color name="backgroundColor">#FF6852</color>
     <color name="colorAccent">#000000</color>
     <color name="colorText">#FFFFFF</color>
     <color name="matchbackground">#D8000000</color>
     <color name="matchButtonBackground">#00000000</color>
+    <color name="hintColor">#B9B9B9</color>
 </resources>
