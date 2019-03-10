@@ -25,7 +25,22 @@ class MyAdapter(val items : ArrayList<Person>, val context: Context) : RecyclerV
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name.text = items.get(position).name
         holder.location.text = items.get(position).location!!.getTitle()
-        holder.time.text = items.get(position).time.toString()
+        holder.time.text = makeTime(items.get(position).time!!)
+    }
+    private fun makeTime(time:Int):String{
+        if(time<1000){
+            return time.toString().substring(0,1) + ":" + time.toString().substring(1) + " AM"
+        }
+        if(time<1200){
+            return time.toString().substring(0,2) + ":" + time.toString().substring(2) + "AM"
+        }
+        if(time<1300){
+            return time.toString().substring(0,2) + ":" + time.toString().substring(2) + "PM"
+        }
+        else{
+            val newtime = time - 1200
+            return time.toString().substring(0,2) + ":" + time.toString().substring(2) + "PM"
+        }
     }
 
     inner class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {

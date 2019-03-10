@@ -101,7 +101,7 @@ class MatchScreenActivity : AppCompatActivity() {
 
     }
 
-    private fun restart(view:View){
+    fun restart(view:View){
         startActivity(Intent(this@MatchScreenActivity, MainActivity::class.java))
     }
 }
