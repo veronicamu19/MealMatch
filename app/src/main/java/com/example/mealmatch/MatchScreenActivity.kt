@@ -12,21 +12,30 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.example.mealmatch.databinding.ActivityMatchscreenBinding
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.coroutines.*
 
 class MatchScreenActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMatchscreenBinding
+
     private val viewModel: MatchScreenViewModel by lazy {
-        ViewModelProviders.of(this).get(MatchScreenViewModel::class.java)
+        ViewModelProviders.of(this,
+            MatchScreenViewModelFactory(intent.extras!!.get("PERSON") as Person))
+            .get(MatchScreenViewModel::class.java)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_matchscreen)
 
+        FirebaseApp.initializeApp(this)
+        viewModel.uploadPerson()
+
         GlobalScope.launch(Dispatchers.IO) {
-            val matches = viewModel.findMatches(intent.extras!!.get("PERSON") as Person)
+            val matches = viewModel.findMatches()
             setAdapter(matches)  // In main thread
         }
     }
@@ -50,7 +59,6 @@ class MatchScreenActivity : AppCompatActivity() {
         val popupWindow: PopupWindow = PopupWindow(popupView, width, height, focusable);
 
         // show the popup window
-        // which view you pass in doesn't matter, it is only used for the window tolken
         popupWindow.showAtLocation(binding.rv, Gravity.CENTER, 0, 0);
 
         val okbtn: Button = popupView.findViewById(R.id.ok)
@@ -62,15 +70,6 @@ class MatchScreenActivity : AppCompatActivity() {
         okbtn.setOnClickListener {
             popupWindow.dismiss()
         }
-
-        /* dismiss the popup window when touched
-        popupView.setOnTouchListener(View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                popupWindow.dismiss();
-                return true;
-            }
-        });*/
 
     }
 }
