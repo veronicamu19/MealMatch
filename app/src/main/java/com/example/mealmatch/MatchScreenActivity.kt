@@ -2,6 +2,7 @@ package com.example.mealmatch
 
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -47,11 +48,31 @@ class MatchScreenActivity : AppCompatActivity() {
         databaseReference.child("people").addListenerForSingleValueEvent(listener)
     }
 
-    private fun setAdapter(matches: ArrayList<Person>){
-        val mAdapter: MyAdapter = MyAdapter(matches,this)
-        binding.rv.adapter = mAdapter
-        mAdapter.onItemClick = { name, contact ->
-            showPopUp(name, contact)
+    private fun setAdapter(matches: ArrayList<Person>?){
+        if(matches==null){
+            val inflater = getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            val popupView: View = inflater.inflate(R.layout.issanomeal, null)
+
+            val width: Int = LinearLayout.LayoutParams.MATCH_PARENT
+            val height: Int = LinearLayout.LayoutParams.MATCH_PARENT
+            val focusable: Boolean = true; // lets taps outside the popup also dismiss it
+            val popupWindow: PopupWindow = PopupWindow(popupView, width, height, focusable);
+
+            // show the popup window
+            popupWindow.showAtLocation(binding.rv, Gravity.CENTER, 0, 0);
+
+            val okbtn: Button = popupView.findViewById(R.id.ok)
+            okbtn.setOnClickListener {
+                popupWindow.dismiss()
+                restart(okbtn)
+            }
+        }
+        else {
+            val mAdapter: MyAdapter = MyAdapter(matches, this)
+            binding.rv.adapter = mAdapter
+            mAdapter.onItemClick = { name, contact ->
+                showPopUp(name, contact)
+            }
         }
     }
 
@@ -78,5 +99,9 @@ class MatchScreenActivity : AppCompatActivity() {
             popupWindow.dismiss()
         }
 
+    }
+
+    private fun restart(view:View){
+        startActivity(Intent(this@MatchScreenActivity, MainActivity::class.java))
     }
 }

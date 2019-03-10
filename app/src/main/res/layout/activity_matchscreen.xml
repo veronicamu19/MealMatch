@@ -39,7 +39,8 @@
                 android:background="@drawable/red_button"
                 android:layout_margin="16dp"
                 android:layout_width="200dp"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:onClick="restart"/>
     </android.support.v7.widget.LinearLayoutCompat>
 
 </layout>
