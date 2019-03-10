@@ -34,7 +34,6 @@
                 android:timePickerMode="spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTintMode="add"
                 android:headerBackground="@color/colorPrimary"
                 android:shadowColor="@color/colorText"
                 android:backgroundTint="@color/colorText"
