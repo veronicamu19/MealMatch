@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/alex_brush</item>
+        <item>@font/delius_swash_caps</item>
+        <item>@font/grand_hotel</item>
         <item>@font/hind_guntur_light</item>
         <item>@font/khula_bold</item>
         <item>@font/khula_extrabold</item>
         <item>@font/khula_light</item>
+        <item>@font/montserrat</item>
+        <item>@font/open_sans_extrabold</item>
+        <item>@font/ruthie</item>
     </array>
 </resources>
