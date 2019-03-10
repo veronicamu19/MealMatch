@@ -26,6 +26,7 @@
                 app:layout_constraintRight_toLeftOf="@id/image"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginLeft="50dp"
+                android:layout_marginBottom="55dp"
         />
 
         <ImageView
@@ -37,6 +38,7 @@
             app:layout_constraintBottom_toTopOf="@id/name"
             android:layout_width="80dp"
             android:layout_height="50dp"
+            android:layout_marginBottom="55dp"
             />
 
         <TextView
@@ -54,21 +56,40 @@
             android:layout_marginRight="50dp"
             />
 
+        <TextView
+                android:id="@+id/slogan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="eat more. spend less."
+                android:textColor="@color/colorText"
+                android:textSize="25dp"
+                app:fontFamily="sans-serif-thin"
+                app:layout_constraintBottom_toTopOf="@id/name"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="90dp"
+                />
+
 
         <EditText
                 android:id="@+id/name"
+                android:theme="@style/EditTextTheme"
                 android:layout_width="300dp"
-                android:layout_height="45dp"
+                android:layout_height="41dp"
                 android:textSize="20dp"
                 android:textColor="@color/colorText"
+                android:textColorHighlight="@color/colorPrimary"
                 android:backgroundTint="@color/colorPrimary"
                 android:hint="name"
+                android:inputType="text"
                 android:textColorHint="@color/hintColor"
-                android:fontFamily="sans-serif-smallcaps"
+                android:fontFamily="sans-serif-thin"
                 app:layout_constraintBottom_toTopOf="@id/phoneemail"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/titlematch"
+                android:layout_marginTop="60dp"
         />
 
         <EditText
@@ -78,9 +99,10 @@
                 android:textSize="20dp"
                 android:textColor="@color/colorText"
                 android:hint="phone/email"
+                android:inputType="text"
                 android:backgroundTint="@color/colorPrimary"
                 android:textColorHint="@color/hintColor"
-                android:fontFamily="sans-serif-smallcaps"
+                android:fontFamily="sans-serif-thin"
                 android:theme="@style/EditTextTheme"
                 app:layout_constraintBottom_toTopOf="@id/swipeMeIn"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -98,7 +120,6 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="15dp"
                 android:textStyle="bold"
-                android:theme="@style/EditTextTheme"
                 app:fontFamily="sans-serif-thin"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
