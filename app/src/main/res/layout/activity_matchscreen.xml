@@ -8,6 +8,7 @@
     </data>
 
     <android.support.v7.widget.LinearLayoutCompat
+            android:background="#FFFFFF"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -16,6 +17,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Your Matches"
+                android:textColor="@color/backgroundColor"
                 android:padding="@dimen/fab_margin"
                 android:textSize="40sp" android:fontFamily="sans-serif-thin"/>
         <android.support.v7.widget.RecyclerView

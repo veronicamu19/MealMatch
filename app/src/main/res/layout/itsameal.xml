@@ -5,19 +5,23 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/matchbackground"
+        >
         <TextView
             android:id="@+id/itsa"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="45dp"
-            android:textColor="@color/colorPrimary"
-            android:text="IT'S A"
+            android:textColor="@color/colorText"
+            android:text="IT'S A MEAL!"
+            android:fontFamily="sans-serif-thin"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toTopOf="@id/image"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="100dp"
+            android:padding="10dp"
             />
 
 
@@ -30,35 +34,25 @@
             app:layout_constraintBottom_toTopOf="@id/name"
             android:layout_width="190dp"
             android:layout_height="110dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
+            android:padding="10dp"
             />
 
-        <TextView
-            android:id="@+id/meal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="45dp"
-            android:textColor="@color/colorPrimary"
-            android:text="MEAL!"
-            app:layout_constraintTop_toBottomOf="@id/image"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="250dp"
-            />
 
         <TextView
             android:id="@+id/contactat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25dp"
-            android:textColor="@color/colorPrimary"
-            android:text="YOU CAN CONTACT NAME AT:"
-            app:layout_constraintTop_toBottomOf="@id/meal"
+            android:textColor="@color/colorText"
+            android:text="You can contact Name at:"
+            android:fontFamily="sans-serif-thin"
+            app:layout_constraintTop_toBottomOf="@id/itsa"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="150dp"
+            android:layout_marginBottom="50dp"
+            android:padding="10dp"
 
             />
 
@@ -67,30 +61,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25dp"
-            android:textColor="@color/colorPrimary"
-            android:text="SOMEONE@GMAIL.COM"
+            android:textColor="@color/colorText"
+            android:text="someone@gmail.com"
+            android:fontFamily="sans-serif-thin"
             app:layout_constraintTop_toBottomOf="@id/contactat"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/ok"
             android:layout_marginBottom="100dp"
             android:layout_marginTop="20dp"
+            android:padding="10dp"
             />
 
         <Button
-            style="@style/ButtonStyle"
-            android:id="@+id/ok"
-            android:layout_width="170dp"
-            android:layout_height="50dp"
-            android:text="OK"
-            android:textSize="15dp"
-            app:layout_constraintTop_toBottomOf="@id/emailconfirmation"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="50dp"
-            android:layout_marginTop="50dp"
-            />
+                style="@style/MatchButtonStyle"
+                android:id="@+id/ok"
+                android:layout_width="170dp"
+                android:layout_height="50dp"
+                android:text="OK"
+                android:textSize="15dp"
+                android:textColor="@color/colorText"
+                android:fontFamily="sans-serif-thin"
+                app:layout_constraintTop_toBottomOf="@id/emailconfirmation"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="50dp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                />
 
 
     </android.support.constraint.ConstraintLayout>
