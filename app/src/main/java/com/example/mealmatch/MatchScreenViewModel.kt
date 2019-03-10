@@ -17,7 +17,7 @@ class MatchScreenViewModel(val person:Person): ViewModel() {
         }
     }
 
-    fun sortMatches(people:ArrayList<Person>): ArrayList<Person>? {
+    fun sortMatches(people:ArrayList<Person>, more:Boolean = false): ArrayList<Person>? {
         var sortedMatches: List<Person>
         when(person.needsSwipe){
             true -> {
@@ -27,14 +27,18 @@ class MatchScreenViewModel(val person:Person): ViewModel() {
                 sortedMatches = people.filter{it.needsSwipe}
             }
         }
-        sortedMatches=sortedMatches.filter {it.location==person.location}
-        sortedMatches=sortedMatches.filter { abs(it.time!!-person.time!!)<30 }
+        if(more){
+            sortedMatches=sortedMatches.filter {it.location!!.getCampus()==person.location!!.getCampus()}
+        }
+        else{
+            sortedMatches=sortedMatches.filter {it.location==person.location}
+        }
         //
         sortedMatches=sortedMatches.sortedByDescending {abs(it.time!!-person.time!!)}.reversed()
         //
         if(sortedMatches.isEmpty()){
             return null
         }
-        return sortedMatches as ArrayList<Person>?
+        return ArrayList(sortedMatches)
     }
 }

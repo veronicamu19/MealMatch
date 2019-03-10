@@ -48,6 +48,19 @@ class MatchScreenActivity : AppCompatActivity() {
         databaseReference.child("people").addListenerForSingleValueEvent(listener)
     }
 
+    fun showMore(view: View){
+        val listener: ValueEventListener = object: ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                people = dataSnapshot.children.map{ it.getValue<Person>(Person::class.java) } as ArrayList<Person>
+                val sortedMatches = viewModel.sortMatches(people,true)
+                setAdapter(sortedMatches)
+            }
+            override fun onCancelled(databaseError: DatabaseError) {
+            }
+        }
+        databaseReference.child("people").addListenerForSingleValueEvent(listener)
+    }
+
     private fun setAdapter(matches: ArrayList<Person>?){
         if(matches==null){
             val inflater = getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater

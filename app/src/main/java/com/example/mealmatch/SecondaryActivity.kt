@@ -41,7 +41,7 @@ class SecondaryActivity : AppCompatActivity() {
         val location: Locations? = enumValues<Locations>().find{it.getTitle().equals(binding.diningLocation.text.toString())}
         if(location!=null){
             viewModel.addLocation(location)
-            viewModel.addTime(100*binding.time.hour + binding.time.minute)
+            viewModel.addTime(binding.time.hour,binding.time.minute)
             val intent = Intent(this@SecondaryActivity, MatchScreenActivity::class.java)
             intent.putExtra("PERSON",viewModel.person)
             startActivity(intent)

@@ -6,7 +6,7 @@ class SecondaryViewModel(val person: Person): ViewModel() {
     fun addLocation(location: Locations){
         person.location = location
     }
-    fun addTime(time: Int){
-        person.time = time
+    fun addTime(hr: Int, min: Int){
+        person.time = hr*100 + min
     }
 }

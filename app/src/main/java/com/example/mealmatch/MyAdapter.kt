@@ -32,14 +32,17 @@ class MyAdapter(val items : ArrayList<Person>, val context: Context) : RecyclerV
             return time.toString().substring(0,1) + ":" + time.toString().substring(1) + " AM"
         }
         if(time<1200){
-            return time.toString().substring(0,2) + ":" + time.toString().substring(2) + "AM"
+            return time.toString().substring(0,2) + ":" + time.toString().substring(2) + " AM"
         }
         if(time<1300){
-            return time.toString().substring(0,2) + ":" + time.toString().substring(2) + "PM"
+            return time.toString().substring(0,2) + ":" + time.toString().substring(2) + " PM"
+        }
+        val newTime = time-1200
+        if(time<2200){
+            return newTime.toString().substring(0,1) + ":" + newTime.toString().substring(1) + " PM"
         }
         else{
-            val newtime = time - 1200
-            return time.toString().substring(0,2) + ":" + time.toString().substring(2) + "PM"
+            return newTime.toString().substring(0,2) + ":" + newTime.toString().substring(2) + " PM"
         }
     }
 
