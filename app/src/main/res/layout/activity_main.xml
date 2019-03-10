@@ -14,19 +14,19 @@
         >
 
         <TextView
-            android:id="@+id/titlemeal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="meal"
-            android:textColor="@color/colorText"
-            android:textSize="45dp"
-            app:fontFamily="sans-serif-thin"
-            app:layout_constraintBottom_toTopOf="@id/name"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/image"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginLeft="50dp"
-            />
+                android:id="@+id/titlemeal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="meal"
+                android:textColor="@color/colorText"
+                android:textSize="45dp"
+                app:fontFamily="sans-serif-thin"
+                app:layout_constraintBottom_toTopOf="@id/name"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/image"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="50dp"
+        />
 
         <ImageView
             android:id="@+id/image"
@@ -55,58 +55,57 @@
             />
 
 
+        <EditText
+                android:id="@+id/name"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:textSize="20dp"
+                android:textColor="@color/colorText"
+                android:backgroundTint="@color/colorPrimary"
+                android:hint="name"
+                android:textColorHint="@color/hintColor"
+                android:fontFamily="sans-serif-smallcaps"
+                app:layout_constraintBottom_toTopOf="@id/phoneemail"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titlematch"
+        />
 
         <EditText
-            android:id="@+id/name"
-            android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:textSize="20dp"
-            android:textColor="@color/colorText"
-            android:backgroundTint="@color/colorPrimary"
-            android:hint="name"
-            android:textColorHint="@color/hintColor"
-            android:fontFamily="sans-serif-thin"
-            app:layout_constraintBottom_toTopOf="@id/phoneemail"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/titlematch"
-            />
-
-        <EditText
-            android:id="@+id/phoneemail"
-            android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:textSize="20dp"
-            android:textColor="@color/colorText"
-            android:hint="phone/email"
-            android:backgroundTint="@color/colorPrimary"
-            android:textColorHint="@color/hintColor"
-            android:fontFamily="sans-serif-thin"
-            android:theme="@style/EditTextTheme"
-            app:layout_constraintBottom_toTopOf="@id/swipeMeIn"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name"
-            />
+                android:id="@+id/phoneemail"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:textSize="20dp"
+                android:textColor="@color/colorText"
+                android:hint="phone/email"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColorHint="@color/hintColor"
+                android:fontFamily="sans-serif-smallcaps"
+                android:theme="@style/EditTextTheme"
+                app:layout_constraintBottom_toTopOf="@id/swipeMeIn"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/name"
+        />
 
         <Button
-            android:id="@+id/swipeMeIn"
-            style="@style/ButtonStyle"
-            android:layout_width="180dp"
-            android:layout_height="50dp"
-            android:onClick="nextActivity"
-            android:text="swipe me in"
-            android:textColor="@color/colorPrimary"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:theme="@style/EditTextTheme"
-            app:fontFamily="sans-serif-thin"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/phoneemail"
-            android:layout_marginBottom="80dp"
-            />
+                android:id="@+id/swipeMeIn"
+                style="@style/ButtonStyle"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:onClick="nextActivity"
+                android:text="swipe me in"
+                android:textColor="@color/colorPrimary"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:theme="@style/EditTextTheme"
+                app:fontFamily="sans-serif-thin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/phoneemail"
+                android:layout_marginBottom="80dp"
+        />
 
         <Button
             android:id="@+id/swipeSomeoneIn"
