@@ -23,9 +23,21 @@ class MyAdapter(val items : ArrayList<Person>, val context: Context) : RecyclerV
 
     // Binds each animal in the ArrayList to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.name.text = items.get(position).name
+        holder.name.text = makeName(items.get(position).name)
         holder.location.text = items.get(position).location!!.getTitle()
         holder.time.text = makeTime(items.get(position).time!!)
+    }
+    private fun makeName(name:String):String{
+        val parts = name.split(" ").toMutableList()
+
+        var output = ""
+
+        for(word in parts){
+            output += word.capitalize() +" "
+        }
+
+        output = output.trim()
+        return output
     }
     private fun makeTime(time:Int):String{
         if(time<1000){
