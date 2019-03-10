@@ -7,4 +7,5 @@ data class Person(val name:String,
                   val emailOrPhone:String,
                   var location:Locations? = null,
                   var time:Int? = null): Serializable{
+    var id: String=""
 }
