@@ -74,7 +74,6 @@
 
         <EditText
                 android:id="@+id/name"
-                android:theme="@style/EditTextTheme"
                 android:layout_width="300dp"
                 android:layout_height="41dp"
                 android:textSize="20dp"
@@ -103,7 +102,6 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:textColorHint="@color/hintColor"
                 android:fontFamily="@font/montserrat"
-                android:theme="@style/EditTextTheme"
                 app:layout_constraintBottom_toTopOf="@id/swipeMeIn"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
