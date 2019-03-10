@@ -26,14 +26,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun nextActivity(view: View){
-        when(view){
-            binding.swipeMeIn ->{
-                viewModel.createPerson(binding.name.text.toString(),true,binding.phoneemail.text.toString())
-                launchNextActivity()
-            }
-            binding.swipeSomeoneIn ->{
-                viewModel.createPerson(binding.name.text.toString(),false,binding.phoneemail.text.toString())
-                launchNextActivity()
+        if(binding.name.text.toString()!="" && binding.phoneemail.text.toString()!="") {
+            when (view) {
+                binding.swipeMeIn -> {
+                    viewModel.createPerson(binding.name.text.toString(), true, binding.phoneemail.text.toString())
+                    launchNextActivity()
+                }
+                binding.swipeSomeoneIn -> {
+                    viewModel.createPerson(binding.name.text.toString(), false, binding.phoneemail.text.toString())
+                    launchNextActivity()
+                }
             }
         }
     }

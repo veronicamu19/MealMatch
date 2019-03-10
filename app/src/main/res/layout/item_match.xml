@@ -5,10 +5,11 @@
         android:layout_height="wrap_content" xmlns:app="http://schemas.android.com/apk/res-auto">
 <android.support.constraint.ConstraintLayout
         android:background="@drawable/item_match_background"
-        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="5dp"
 android:layout_width="match_parent" android:layout_height="wrap_content">
     <TextView
-
             style="@style/MatchTextStyle"
             android:id="@+id/matchname"
             android:paddingTop="@dimen/fab_margin"
@@ -17,14 +18,16 @@ android:layout_width="match_parent" android:layout_height="wrap_content">
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:textStyle="bold"/>
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-thin"/>
     <TextView
             style="@style/MatchTextStyle"
             android:id="@+id/matchlocation"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/matchname"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-thin"/>
     <TextView
             style="@style/MatchTextStyle"
             android:id="@+id/matchtime"
@@ -32,16 +35,8 @@ android:layout_width="match_parent" android:layout_height="wrap_content">
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/matchlocation"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    <ImageView
-            android:backgroundTint="@color/colorPrimary"
-            android:layout_margin="5dp"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/mealmatchlogo"/>
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-thin"/>
 
 </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.LinearLayoutCompat>

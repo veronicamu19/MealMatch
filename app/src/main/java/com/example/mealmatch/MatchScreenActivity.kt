@@ -13,13 +13,14 @@ import android.view.ViewGroup
 import android.widget.*
 import com.example.mealmatch.databinding.ActivityMatchscreenBinding
 import com.google.firebase.FirebaseApp
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import kotlinx.coroutines.*
 
 class MatchScreenActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMatchscreenBinding
+    var people = ArrayList<Person>()
+    val databaseReference = FirebaseDatabase.getInstance().reference
 
     private val viewModel: MatchScreenViewModel by lazy {
         ViewModelProviders.of(this,
@@ -34,10 +35,16 @@ class MatchScreenActivity : AppCompatActivity() {
         FirebaseApp.initializeApp(this)
         viewModel.uploadPerson()
 
-        GlobalScope.launch(Dispatchers.IO) {
-            val matches = viewModel.findMatches()
-            setAdapter(matches)  // In main thread
+        val listener: ValueEventListener = object: ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                people = dataSnapshot.children.map{ it.getValue<Person>(Person::class.java) } as ArrayList<Person>
+                val sortedMatches = viewModel.sortMatches(people)
+                setAdapter(sortedMatches)
+            }
+            override fun onCancelled(databaseError: DatabaseError) {
+            }
         }
+        databaseReference.child("people").addListenerForSingleValueEvent(listener)
     }
 
     private fun setAdapter(matches: ArrayList<Person>){
