@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModel
 import android.widget.Toast
 import com.google.firebase.FirebaseApp
 import com.google.firebase.database.*
+import kotlin.math.abs
 
 class MatchScreenViewModel(val person:Person): ViewModel() {
     val databaseReference = FirebaseDatabase.getInstance().reference
@@ -26,6 +27,8 @@ class MatchScreenViewModel(val person:Person): ViewModel() {
                 sortedMatches = people.filter{it.needsSwipe}
             }
         }
+        sortedMatches=sortedMatches.filter {it.location==person.location}
+        sortedMatches=sortedMatches.filter {abs((person.time!!-it.time!!))<=30}
         return sortedMatches as ArrayList<Person>
     }
 }
